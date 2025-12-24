@@ -140,7 +140,7 @@ export default function MembershipPage() {
   return (
     <div data-editor-id="app/membership/page.tsx:114:5" className="min-h-screen bg-black">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-black relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -150,7 +150,7 @@ export default function MembershipPage() {
             className="w-full h-full object-cover"
           />
         </div>
-        
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -180,11 +180,10 @@ export default function MembershipPage() {
                 <button
                   key={cycle}
                   onClick={() => setBillingCycle(cycle)}
-                  className={`px-5 py-2 rounded-full font-medium transition-all duration-200 capitalize ${
-                    billingCycle === cycle
+                  className={`px-5 py-2 rounded-full font-medium transition-all duration-200 capitalize ${billingCycle === cycle
                       ? 'bg-orange-400 text-black'
                       : 'text-gray-300 hover:text-white'
-                  }`}
+                    }`}
                 >
                   <span data-editor-id="app/membership/page.tsx:159:19">
                     {cycle === 'quarterly' ? '3 Months' : cycle === 'yearly' ? '12 Months' : 'Monthly'}
@@ -210,25 +209,22 @@ export default function MembershipPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className={`relative ${
-                  plan.popular
+                className={`relative ${plan.popular
                     ? 'scale-105 lg:scale-110 z-10'
                     : ''
-                }`}
+                  }`}
               >
-                <div className={`h-full bg-gray-900/70 backdrop-blur-sm border rounded-2xl p-8 hover:transform hover:scale-105 transition-all duration-300 ${
-                  plan.popular
+                <div className={`h-full bg-gray-900/70 backdrop-blur-sm border rounded-2xl p-8 hover:transform hover:scale-105 transition-all duration-300 ${plan.popular
                     ? 'border-orange-400 shadow-2xl shadow-orange-400/20'
                     : 'border-gray-800/50 hover:border-orange-400/30'
-                }`}>
+                  }`}>
                   {/* Badge */}
                   {(plan.popular || plan.badge) && (
                     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <span className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wide ${
-                        plan.popular
+                      <span className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wide ${plan.popular
                           ? 'bg-orange-400 text-black'
                           : 'bg-gray-800 text-orange-400 border border-orange-400/30'
-                      }`}>
+                        }`}>
                         <span data-editor-id="app/membership/page.tsx:200:25">{plan.badge}</span>
                       </span>
                     </div>
@@ -242,7 +238,7 @@ export default function MembershipPage() {
                     <p className="text-gray-400 text-sm mb-4">
                       <span data-editor-id="app/membership/page.tsx:212:23">{plan.shortDescription}</span>
                     </p>
-                    
+
                     {/* Pricing */}
                     <div className="flex items-center justify-center space-x-2 mb-2">
                       {plan.originalPrice > plan.price && billingCycle === 'monthly' && (
@@ -257,7 +253,7 @@ export default function MembershipPage() {
                     <p className="text-gray-400">
                       <span data-editor-id="app/membership/page.tsx:226:23">per {getBillingLabel()}</span>
                     </p>
-                    
+
                     {plan.popular && billingCycle === 'monthly' && (
                       <p className="text-green-400 text-sm font-medium mt-2">
                         <span data-editor-id="app/membership/page.tsx:231:25">Save ₹{plan.originalPrice - plan.price}/month</span>
@@ -282,7 +278,7 @@ export default function MembershipPage() {
                         </span>
                       </motion.div>
                     ))}
-                    
+
                     {plan.notIncluded.length > 0 && (
                       <div className="pt-4 border-t border-gray-800/50">
                         <p className="text-gray-500 text-xs mb-3 uppercase tracking-wide">
@@ -310,11 +306,10 @@ export default function MembershipPage() {
                     onClick={() => {
                       console.log('Selected plan:', plan.id);
                     }}
-                    className={`w-full py-3 rounded-full font-semibold text-base transition-all duration-200 ${
-                      plan.popular
+                    className={`w-full py-3 rounded-full font-semibold text-base transition-all duration-200 ${plan.popular
                         ? 'bg-orange-400 text-black hover:bg-orange-300'
                         : 'border-2 border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-black'
-                    }`}
+                      }`}
                   >
                     <span data-editor-id="app/membership/page.tsx:281:21">
                       {plan.popular ? 'Get Started - Special Offer' : 'Choose This Plan'}
@@ -338,7 +333,7 @@ export default function MembershipPage() {
             className="text-center mb-16"
           >
             <h2 className="text-2xl font-bold text-white mb-6">
-              <span data-editor-id="app/membership/page.tsx:302:15">Why Choose Growth Fitness?</span>
+              <span data-editor-id="app/membership/page.tsx:302:15">Why Choose Elite Fitness?</span>
             </h2>
           </motion.div>
 
@@ -350,7 +345,7 @@ export default function MembershipPage() {
                 description: "Transparent pricing with no surprise charges"
               },
               {
-                icon: "solar:calendar-bold", 
+                icon: "solar:calendar-bold",
                 title: "Flexible Cancellation",
                 description: "Cancel anytime with 30 days notice"
               },
@@ -420,11 +415,10 @@ export default function MembershipPage() {
                   <span className="text-white font-medium">
                     <span data-editor-id="app/membership/page.tsx:381:21">{faq.question}</span>
                   </span>
-                  <Icon 
-                    icon="solar:alt-arrow-down-linear" 
-                    className={`text-orange-400 text-xl transition-transform duration-200 ${
-                      openFaq === index ? 'rotate-180' : ''
-                    }`} 
+                  <Icon
+                    icon="solar:alt-arrow-down-linear"
+                    className={`text-orange-400 text-xl transition-transform duration-200 ${openFaq === index ? 'rotate-180' : ''
+                      }`}
                   />
                 </button>
                 {openFaq === index && (

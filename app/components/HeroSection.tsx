@@ -46,7 +46,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="text-base sm:text-lg text-gray-300 mb-8 max-w-3xl mx-auto font-light leading-relaxed"
         >
-          <span data-editor-id="app/components/HeroSection.tsx:45:11">Premium fitness studio in Parvathapur, Medipally. Experience world-class equipment, expert trainers, and a community that pushes you beyond your limits.</span>
+          <span data-editor-id="app/components/HeroSection.tsx:45:11">Premium fitness studio in Miyapur, Hyderabad. Experience world-class equipment, expert trainers, and a community that pushes you beyond your limits.</span>
         </motion.p>
 
         {/* CTA Buttons */}
@@ -63,7 +63,7 @@ export default function HeroSection() {
           >
             <span data-editor-id="app/components/HeroSection.tsx:59:13">Join Now - ₹899/month</span>
           </motion.button>
-          
+
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -73,7 +73,7 @@ export default function HeroSection() {
           </motion.button>
         </motion.div>
 
-        
+
       </div>
     </div>
   );

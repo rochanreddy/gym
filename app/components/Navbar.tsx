@@ -12,7 +12,6 @@ const navItems = [
   { name: "Trainers", href: "/trainers" },
   { name: "Membership", href: "/membership" },
   { name: "Gallery", href: "/gallery" },
-  { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/contact" }
 ];
 
@@ -24,7 +23,7 @@ export default function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -34,19 +33,17 @@ export default function Navbar() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-black/90 backdrop-blur-lg border-b border-gray-800/50' 
-          : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+        ? 'bg-black/90 backdrop-blur-lg border-b border-gray-800/50'
+        : 'bg-transparent'
+        }`}
     >
       <div data-editor-id="app/components/Navbar.tsx:35:7" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div data-editor-id="app/components/Navbar.tsx:36:9" className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
-            <img src="/photos/logo.png" alt="Growth Fitness Studio" className="h-16 w-16 rounded-full object-cover" />
-            <span data-editor-id="app/components/Navbar.tsx:40:13" className="text-white font-semibold text-lg">
-              <span data-editor-id="app/components/Navbar.tsx:41:15">Growth Fitness</span>
+            <span data-editor-id="app/components/Navbar.tsx:40:13" className="text-white font-semibold text-xl">
+              <span data-editor-id="app/components/Navbar.tsx:41:15">Elite Fitness</span>
             </span>
           </Link>
 

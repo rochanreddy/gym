@@ -11,12 +11,12 @@ const testimonials = [
     role: "IT Professional",
     image: "https://i.pravatar.cc/400?u=priya1",
     rating: 5,
-    text: "Growth Fitness has completely transformed my lifestyle. The trainers are incredibly supportive and the community is amazing. Lost 15kg in just 6 months!",
+    text: "Elite Fitness has completely transformed my lifestyle. The trainers are incredibly supportive and the community is amazing. Lost 15kg in just 6 months!",
     program: "CrossFit & Nutrition"
   },
   {
     name: "Rajesh Kumar",
-    role: "Business Owner", 
+    role: "Business Owner",
     image: "https://i.pravatar.cc/400?u=rajesh2",
     rating: 5,
     text: "Best investment I've made for my health. The facilities are top-notch and the personalized approach helped me achieve my fitness goals faster than expected.",
@@ -25,7 +25,7 @@ const testimonials = [
   {
     name: "Anitha Reddy",
     role: "Homemaker",
-    image: "https://i.pravatar.cc/400?u=anitha3", 
+    image: "https://i.pravatar.cc/400?u=anitha3",
     rating: 5,
     text: "The Zumba classes are so much fun! I never thought exercise could be this enjoyable. The studio has become my second home and the community my second family.",
     program: "Zumba & Group Classes"

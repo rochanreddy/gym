@@ -31,7 +31,7 @@ export default function ContactPage() {
   return (
     <div data-editor-id="app/contact/page.tsx:28:5" className="min-h-screen bg-black">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-black relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -41,7 +41,7 @@ export default function ContactPage() {
             className="w-full h-full object-cover"
           />
         </div>
-        
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -76,7 +76,7 @@ export default function ContactPage() {
               <h2 className="text-2xl font-bold text-white mb-6">
                 <span data-editor-id="app/contact/page.tsx:71:17">Visit Our Studio</span>
               </h2>
-              
+
               {/* Location */}
               <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800/50 rounded-2xl p-8 mb-8">
                 <div className="flex items-start space-x-4">
@@ -88,9 +88,9 @@ export default function ContactPage() {
                       <span data-editor-id="app/contact/page.tsx:82:23">Our Location</span>
                     </h3>
                     <p className="text-gray-300 leading-relaxed">
-                      <span data-editor-id="app/contact/page.tsx:85:23">Road No.10, Sai Aishwarya Colony,<br />
-                      Parvathapur, Peerzadiguda,<br />
-                      Medipally, Telangana</span>
+                      <span data-editor-id="app/contact/page.tsx:85:23">X ROADS, Miyapur HDFC Junction,<br />
+                        Bollaram Road, near D Mart,<br />
+                        JP Nagar, Miyapur, Hyderabad, Telangana 500049</span>
                     </p>
                   </div>
                 </div>
@@ -123,7 +123,7 @@ export default function ContactPage() {
                     </h3>
                   </div>
                   <p className="text-gray-300">
-                    <span data-editor-id="app/contact/page.tsx:117:21">info@growthfitness.com</span>
+                    <span data-editor-id="app/contact/page.tsx:117:21">info@elitefitness.com</span>
                   </p>
                   <p className="text-sm text-gray-400 mt-1">
                     <span data-editor-id="app/contact/page.tsx:120:21">We reply within 24 hours</span>
@@ -138,7 +138,7 @@ export default function ContactPage() {
                 </h3>
                 <div className="flex space-x-4">
                   {[
-                    { name: "Instagram", icon: "mdi:instagram", href: "https://instagram.com/growthfitnesstudio.parvathapur" },
+                    { name: "Instagram", icon: "mdi:instagram", href: "https://instagram.com/elitefitness.parvathapur" },
                     { name: "Facebook", icon: "mdi:facebook", href: "#" },
                     { name: "WhatsApp", icon: "mdi:whatsapp", href: "#" },
                     { name: "YouTube", icon: "mdi:youtube", href: "#" }
@@ -169,7 +169,7 @@ export default function ContactPage() {
               <h2 className="text-2xl font-bold text-white mb-6">
                 <span data-editor-id="app/contact/page.tsx:154:17">Send us a Message</span>
               </h2>
-              
+
               <form onSubmit={handleSubmit} className="bg-gray-900/50 backdrop-blur-sm border border-gray-800/50 rounded-2xl p-8">
                 {/* Name & Email */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
@@ -288,10 +288,10 @@ export default function ContactPage() {
               <span data-editor-id="app/contact/page.tsx:271:15">Find Us on the Map</span>
             </h2>
             <p className="text-gray-300">
-              <span data-editor-id="app/contact/page.tsx:274:15">Located in the heart of Parvathapur, Medipally</span>
+              <span data-editor-id="app/contact/page.tsx:274:15">Located in Miyapur, Hyderabad near D Mart</span>
             </p>
           </motion.div>
-          
+
           {/* Map Placeholder */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -307,7 +307,7 @@ export default function ContactPage() {
               <span data-editor-id="app/contact/page.tsx:290:15">Interactive Map Coming Soon</span>
             </h3>
             <p className="text-gray-400 mb-6">
-              <span data-editor-id="app/contact/page.tsx:293:15">For now, you can find us at Road No.10, Sai Aishwarya Colony, Parvathapur</span>
+              <span data-editor-id="app/contact/page.tsx:293:15">For now, you can find us at X ROADS, Miyapur HDFC Junction, Bollaram Road, near D Mart, JP Nagar, Miyapur</span>
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}

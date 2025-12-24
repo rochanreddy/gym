@@ -11,15 +11,15 @@ const classes = [
     icon: "solar:dumbbell-bold",
     duration: "60 min",
     difficulty: "High",
-    image: "/photos/2025-09-02.png"
+    image: "/photos/10002.jpeg"
   },
   {
     name: "Zumba",
     description: "Dance fitness with Latin music",
     icon: "mdi:dance-pole",
-    duration: "45 min", 
+    duration: "45 min",
     difficulty: "Medium",
-    image: "/photos/2025-09-05.png"
+    image: "/photos/10003.jpeg"
   },
   {
     name: "Yoga",
@@ -27,7 +27,7 @@ const classes = [
     icon: "game-icons:yoga",
     duration: "75 min",
     difficulty: "Low",
-    image: "/photos/2025-09-06.png"
+    image: "/photos/10004.jpeg"
   },
   {
     name: "Cardio",
@@ -35,7 +35,7 @@ const classes = [
     icon: "mingcute:fitness-fill",
     duration: "45 min",
     difficulty: "Medium",
-    image: "/photos/2025-09-09.png"
+    image: "/photos/10005.jpeg"
   },
   {
     name: "Functional Training",
@@ -43,7 +43,7 @@ const classes = [
     icon: "icon-park-outline:fitness",
     duration: "50 min",
     difficulty: "High",
-    image: "/photos/2025-09-02.png"
+    image: "/photos/10006.jpeg"
   },
   {
     name: "Group Classes",
@@ -51,7 +51,7 @@ const classes = [
     icon: "mdi:account-group",
     duration: "60 min",
     difficulty: "Medium",
-    image: "/photos/2025-09-05.png"
+    image: "/photos/10002.jpeg"
   }
 ];
 
@@ -97,7 +97,7 @@ export default function ClassesPreview() {
             >
               <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800/50 rounded-2xl overflow-hidden hover:border-orange-400/50 transition-all duration-300 hover:transform hover:scale-105">
                 {/* Image */}
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-56 overflow-hidden">
                   <img
                     src={classItem.image}
                     alt={classItem.name}

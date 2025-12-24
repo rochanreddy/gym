@@ -20,11 +20,12 @@ export default function BackgroundCarousel({
       imagePaths && imagePaths.length > 0
         ? imagePaths
         : [
-            "/photos/2025-09-02.png",
-            "/photos/2025-09-05.png",
-            "/photos/2025-09-06.png",
-            "/photos/2025-09-09.png",
-          ],
+          "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=80",
+          "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1920&q=80",
+          "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=1920&q=80",
+          "https://images.unsplash.com/photo-1593079831268-3381b0db4a77?w=1920&q=80",
+          "https://images.unsplash.com/photo-1558611848-73f7eb4001a1?w=1920&q=80",
+        ],
     [imagePaths]
   );
 

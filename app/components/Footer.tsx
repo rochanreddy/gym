@@ -27,7 +27,7 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { name: "Instagram", icon: "mdi:instagram", href: "https://instagram.com/growthfitnesstudio.parvathapur" },
+  { name: "Instagram", icon: "mdi:instagram", href: "https://instagram.com/elitefitness.parvathapur" },
   { name: "Facebook", icon: "mdi:facebook", href: "#" },
   { name: "WhatsApp", icon: "mdi:whatsapp", href: "#" },
   { name: "YouTube", icon: "mdi:youtube", href: "#" },
@@ -57,25 +57,25 @@ export default function Footer() {
           >
             <div className="flex items-center space-x-2 mb-6">
               <Icon icon="mdi:gym" className="text-orange-400 text-2xl" />
-              <span data-editor-id="app/components/Footer.tsx:51:15" className="text-white font-bold text-lg">Growth Fitness</span>
+              <span data-editor-id="app/components/Footer.tsx:51:15" className="text-white font-bold text-lg">Elite Fitness</span>
             </div>
-            
+
             <p className="text-gray-400 mb-6 leading-relaxed">
-              <span data-editor-id="app/components/Footer.tsx:55:15">Transform your fitness journey at Parvathapur&apos;s premier gym. Expert trainers, modern equipment, and a supportive community await you.</span>
+              <span data-editor-id="app/components/Footer.tsx:55:15">Transform your fitness journey at Miyapur&apos;s premier gym. Expert trainers, modern equipment, and a supportive community await you.</span>
             </p>
 
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-gray-300">
                 <Icon icon="solar:map-point-bold" className="text-orange-400" />
-                <span data-editor-id="app/components/Footer.tsx:61:17" className="text-sm">Road No.10, Sai Aishwarya Colony, Parvathapur, Peerzadiguda, Medipally</span>
+                <span data-editor-id="app/components/Footer.tsx:61:17" className="text-sm">X ROADS, Miyapur HDFC Junction, Bollaram Road, near D Mart, JP Nagar, Miyapur, Hyderabad, Telangana 500049</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-300">
                 <Icon icon="solar:phone-bold" className="text-orange-400" />
-                <span data-editor-id="app/components/Footer.tsx:65:17" className="text-sm">+91 9876543210</span>
+                <span data-editor-id="app/components/Footer.tsx:65:17" className="text-sm">+91 9000019524</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-300">
                 <Icon icon="solar:letter-bold" className="text-orange-400" />
-                <span data-editor-id="app/components/Footer.tsx:69:17" className="text-sm">info@growthfitness.com</span>
+                <span data-editor-id="app/components/Footer.tsx:69:17" className="text-sm">info@elitefitness.com</span>
               </div>
             </div>
           </motion.div>
@@ -119,7 +119,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             {/* Copyright */}
             <p className="text-gray-400 text-sm">
-              <span data-editor-id="app/components/Footer.tsx:110:15">© 2024 Growth Fitness Studio. All rights reserved.</span>
+              <span data-editor-id="app/components/Footer.tsx:110:15">© 2024 Elite Fitness. All rights reserved.</span>
             </p>
 
             {/* Social Links */}
