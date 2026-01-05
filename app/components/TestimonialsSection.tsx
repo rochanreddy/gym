@@ -9,7 +9,6 @@ const testimonials = [
   {
     name: "Priya Sharma",
     role: "IT Professional",
-    image: "https://i.pravatar.cc/400?u=priya1",
     rating: 5,
     text: "Elite Fitness has completely transformed my lifestyle. The trainers are incredibly supportive and the community is amazing. Lost 15kg in just 6 months!",
     program: "CrossFit & Nutrition"
@@ -17,7 +16,6 @@ const testimonials = [
   {
     name: "Rajesh Kumar",
     role: "Business Owner",
-    image: "https://i.pravatar.cc/400?u=rajesh2",
     rating: 5,
     text: "Best investment I've made for my health. The facilities are top-notch and the personalized approach helped me achieve my fitness goals faster than expected.",
     program: "Personal Training"
@@ -25,7 +23,6 @@ const testimonials = [
   {
     name: "Anitha Reddy",
     role: "Homemaker",
-    image: "https://i.pravatar.cc/400?u=anitha3",
     rating: 5,
     text: "The Zumba classes are so much fun! I never thought exercise could be this enjoyable. The studio has become my second home and the community my second family.",
     program: "Zumba & Group Classes"
@@ -33,7 +30,6 @@ const testimonials = [
   {
     name: "Vikram Singh",
     role: "Software Engineer",
-    image: "https://i.pravatar.cc/400?u=vikram4",
     rating: 5,
     text: "Professional trainers, clean facilities, and flexible timings. Perfect for someone with a busy schedule. The results speak for themselves!",
     program: "Functional Training"
@@ -95,11 +91,9 @@ export default function TestimonialsSection() {
 
                 {/* Member Info */}
                 <div className="flex items-center space-x-4">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-14 h-14 rounded-full object-cover border-2 border-orange-400/30"
-                  />
+                  <div className="w-14 h-14 rounded-full bg-gray-800 border-2 border-orange-400/30 flex items-center justify-center">
+                    <Icon icon="solar:user-bold" className="text-gray-400 text-2xl" />
+                  </div>
                   <div>
                     <h4 className="text-white font-semibold text-base">
                       <span data-editor-id="app/components/TestimonialsSection.tsx:94:23">{testimonial.name}</span>

@@ -28,9 +28,7 @@ const footerLinks = {
 
 const socialLinks = [
   { name: "Instagram", icon: "mdi:instagram", href: "https://www.instagram.com/elitefitness_miyapur/" },
-  { name: "Facebook", icon: "mdi:facebook", href: "#" },
   { name: "WhatsApp", icon: "mdi:whatsapp", href: "https://wa.me/919000019524" },
-  { name: "YouTube", icon: "mdi:youtube", href: "#" },
 ];
 
 export default function Footer() {

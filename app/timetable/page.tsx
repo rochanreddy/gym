@@ -271,21 +271,17 @@ export default function TimetablePage() {
                         <p className="text-gray-300 mb-8">
                             <span>Book your spot now and start your fitness journey with Elite Fitness</span>
                         </p>
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                            <motion.button
+                        <div className="flex items-center justify-center">
+                            <motion.a
+                                href="https://wa.me/919000019524"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
-                                className="bg-orange-400 text-black px-8 py-3 rounded-full font-semibold text-base hover:bg-orange-300 transition-colors duration-200 w-full sm:w-auto"
+                                className="bg-orange-400 text-black px-8 py-3 rounded-full font-semibold text-base hover:bg-orange-300 transition-colors duration-200 w-full sm:w-auto text-center"
                             >
                                 <span>Book a Class</span>
-                            </motion.button>
-                            <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="border-2 border-orange-400 text-orange-400 px-8 py-3 rounded-full font-semibold text-base hover:bg-orange-400 hover:text-black transition-all duration-200 w-full sm:w-auto"
-                            >
-                                <span>Download Schedule</span>
-                            </motion.button>
+                            </motion.a>
                         </div>
                     </motion.div>
                 </div>

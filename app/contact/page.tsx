@@ -1,33 +1,12 @@
 'use client';
 
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: ''
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
   return (
     <div data-editor-id="app/contact/page.tsx:28:5" className="min-h-screen bg-black">
       <Navbar />
@@ -139,9 +118,7 @@ export default function ContactPage() {
                 <div className="flex space-x-4">
                   {[
                     { name: "Instagram", icon: "mdi:instagram", href: "https://www.instagram.com/elitefitness_miyapur/" },
-                    { name: "Facebook", icon: "mdi:facebook", href: "#" },
-                    { name: "WhatsApp", icon: "mdi:whatsapp", href: "https://wa.me/919000019524" },
-                    { name: "YouTube", icon: "mdi:youtube", href: "#" }
+                    { name: "WhatsApp", icon: "mdi:whatsapp", href: "https://wa.me/919000019524" }
                   ].map((social) => (
                     <motion.a
                       key={social.name}
@@ -159,116 +136,38 @@ export default function ContactPage() {
               </div>
             </motion.div>
 
-            {/* Contact Form */}
+            {/* Fitness Image */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
+              className="flex flex-col items-center justify-center"
             >
-              <h2 className="text-2xl font-bold text-white mb-6">
-                <span data-editor-id="app/contact/page.tsx:154:17">Send us a Message</span>
-              </h2>
-
-              <form onSubmit={handleSubmit} className="bg-gray-900/50 backdrop-blur-sm border border-gray-800/50 rounded-2xl p-8">
-                {/* Name & Email */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                      <span data-editor-id="app/contact/page.tsx:162:23">Name *</span>
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      required
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-400 transition-colors"
-                      placeholder="Your full name"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                      <span data-editor-id="app/contact/page.tsx:175:23">Email *</span>
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-400 transition-colors"
-                      placeholder="your.email@example.com"
-                    />
-                  </div>
-                </div>
-
-                {/* Phone & Subject */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
-                      <span data-editor-id="app/contact/page.tsx:191:23">Phone</span>
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-400 transition-colors"
-                      placeholder="+91 9876543210"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
-                      <span data-editor-id="app/contact/page.tsx:203:23">Subject *</span>
-                    </label>
-                    <select
-                      id="subject"
-                      name="subject"
-                      required
-                      value={formData.subject}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-400 transition-colors"
-                    >
-                      <option value="">Select a topic</option>
-                      <option value="membership">Membership Inquiry</option>
-                      <option value="classes">Classes Information</option>
-                      <option value="personal-training">Personal Training</option>
-                      <option value="support">General Support</option>
-                    </select>
-                  </div>
-                </div>
-
-                {/* Message */}
-                <div className="mb-8">
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                    <span data-editor-id="app/contact/page.tsx:234:21">Message *</span>
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows={6}
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-400 transition-colors resize-none"
-                    placeholder="Tell us about your fitness goals or any questions you have..."
-                  />
-                </div>
-
-                {/* Submit Button */}
-                <motion.button
-                  type="submit"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full bg-orange-400 text-black py-3 rounded-full font-semibold text-base hover:bg-orange-300 transition-colors duration-200"
+              <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800/50 rounded-2xl p-8 w-full h-full flex flex-col items-center justify-center">
+                <img
+                  src="/photos/WhatsApp Image 2026-01-05 at 21.54.48.jpeg"
+                  alt="Elite Fitness"
+                  className="w-full max-w-md h-auto mb-8 rounded-xl"
+                />
+                <h3 className="text-2xl font-bold text-white mb-3 text-center">
+                  Start Your Journey Today
+                </h3>
+                <p className="text-gray-300 text-center mb-6 max-w-sm">
+                  Ready to transform your life? Reach out via WhatsApp for instant support!
+                </p>
+                <motion.a
+                  href="https://wa.me/919000019524"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-orange-400 text-black px-8 py-3 rounded-full font-semibold text-base hover:bg-orange-300 transition-colors duration-200 inline-flex items-center space-x-2"
                 >
-                  <span data-editor-id="app/contact/page.tsx:253:19">Send Message</span>
-                </motion.button>
-              </form>
+                  <Icon icon="mdi:whatsapp" className="text-xl" />
+                  <span>Chat on WhatsApp</span>
+                </motion.a>
+              </div>
             </motion.div>
           </div>
         </div>

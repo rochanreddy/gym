@@ -11,84 +11,72 @@ const trainers = [
         id: 1,
         name: "Rohit Sharma",
         role: "Head Trainer & CrossFit Specialist",
-        image: "https://i.pravatar.cc/400?img=12",
         specialties: ["CrossFit", "Strength Training", "Athletic Performance"],
         experience: "8+ years",
         certifications: ["CrossFit Level 2", "NSCA-CPT", "Sports Nutrition"],
         bio: "Rohit brings over 8 years of experience in functional fitness and athletic training. His passion for helping clients achieve their peak performance has transformed hundreds of lives.",
         social: {
-            instagram: "#",
-            facebook: "#"
+            instagram: "#"
         }
     },
     {
         id: 2,
         name: "Priya Nair",
         role: "Zumba & Dance Fitness Instructor",
-        image: "https://i.pravatar.cc/400?img=5",
         specialties: ["Zumba", "Dance Fitness", "Cardio Training"],
         experience: "6+ years",
         certifications: ["Zumba Instructor", "Group Fitness Certified", "Dance Choreography"],
         bio: "Priya's energetic classes make fitness fun! With her background in dance and fitness, she creates engaging workouts that keep you moving and motivated.",
         social: {
-            instagram: "#",
-            facebook: "#"
+            instagram: "#"
         }
     },
     {
         id: 3,
         name: "Anjali Gupta",
         role: "Yoga & Mindfulness Coach",
-        image: "https://i.pravatar.cc/400?img=9",
         specialties: ["Vinyasa Yoga", "Meditation", "Flexibility Training"],
         experience: "10+ years",
         certifications: ["RYT-500", "Meditation Teacher", "Ayurveda Wellness"],
         bio: "Anjali's holistic approach to wellness combines traditional yoga practices with modern fitness principles, helping clients find balance in body and mind.",
         social: {
-            instagram: "#",
-            facebook: "#"
+            instagram: "#"
         }
     },
     {
         id: 4,
         name: "Vikram Singh",
         role: "HIIT & Functional Training Expert",
-        image: "https://i.pravatar.cc/400?img=15",
         specialties: ["HIIT", "Functional Training", "Weight Loss"],
         experience: "7+ years",
         certifications: ["NASM-CPT", "TRX Certified", "Nutrition Coach"],
         bio: "Vikram specializes in high-intensity training programs designed to maximize results. His scientific approach to fitness ensures safe and effective workouts.",
         social: {
-            instagram: "#",
-            facebook: "#"
+            instagram: "#"
         }
     },
     {
         id: 5,
         name: "Deepak Kumar",
         role: "Kickboxing & Combat Fitness",
-        image: "https://i.pravatar.cc/400?img=33",
         specialties: ["Kickboxing", "Combat Training", "Cardio Conditioning"],
         experience: "9+ years",
         certifications: ["Kickboxing Instructor", "Self-Defense Trainer", "ACE Certified"],
         bio: "With a background in martial arts, Deepak brings authentic combat training to fitness. His classes build strength, confidence, and cardiovascular endurance.",
         social: {
-            instagram: "#",
-            facebook: "#"
+            instagram: "#"
         }
     },
     {
         id: 6,
         name: "Arjun Reddy",
         role: "Personal Training & Rehabilitation",
-        image: "https://i.pravatar.cc/400?img=68",
         specialties: ["Personal Training", "Injury Rehabilitation", "Strength Building"],
         experience: "5+ years",
         certifications: ["ACSM-CPT", "Corrective Exercise Specialist", "Sports Therapy"],
         bio: "Arjun focuses on personalized training programs and rehabilitation. His expertise helps clients recover from injuries and build lasting strength.",
         social: {
-            instagram: "#",
-            facebook: "#"
+            instagram: "#"
         }
     }
 ];
@@ -143,11 +131,9 @@ export default function TrainersPage() {
                             >
                                 {/* Image */}
                                 <div className="relative h-80 overflow-hidden">
-                                    <img
-                                        src={trainer.image}
-                                        alt={trainer.name}
-                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                    />
+                                    <div className="w-full h-full bg-gray-800 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                                        <Icon icon="solar:user-bold" className="text-gray-600 text-8xl" />
+                                    </div>
                                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
 
                                     {/* Social Links */}
@@ -159,14 +145,6 @@ export default function TrainersPage() {
                                             className="bg-orange-400/20 backdrop-blur-sm p-2 rounded-full text-orange-400 hover:bg-orange-400 hover:text-black transition-all duration-200"
                                         >
                                             <Icon icon="mdi:instagram" className="text-xl" />
-                                        </motion.a>
-                                        <motion.a
-                                            href={trainer.social.facebook}
-                                            whileHover={{ scale: 1.1 }}
-                                            whileTap={{ scale: 0.9 }}
-                                            className="bg-orange-400/20 backdrop-blur-sm p-2 rounded-full text-orange-400 hover:bg-orange-400 hover:text-black transition-all duration-200"
-                                        >
-                                            <Icon icon="mdi:facebook" className="text-xl" />
                                         </motion.a>
                                     </div>
                                 </div>
@@ -243,13 +221,16 @@ export default function TrainersPage() {
                         <p className="text-gray-300 mb-8">
                             <span data-editor-id="app/trainers/page.tsx:162:15">Book a session with one of our expert trainers today</span>
                         </p>
-                        <motion.button
+                        <motion.a
+                            href="https://wa.me/919000019524"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="bg-orange-400 text-black px-8 py-3 rounded-full font-semibold text-base hover:bg-orange-300 transition-colors duration-200"
+                            className="bg-orange-400 text-black px-8 py-3 rounded-full font-semibold text-base hover:bg-orange-300 transition-colors duration-200 inline-block"
                         >
-                            <span data-editor-id="app/trainers/page.tsx:169:15">Book a Free Consultation</span>
-                        </motion.button>
+                            <span>Book a Free Consultation</span>
+                        </motion.a>
                     </motion.div>
                 </div>
             </section>
