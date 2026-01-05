@@ -107,7 +107,7 @@ export default function ContactPage() {
                     </h3>
                   </div>
                   <p className="text-gray-300">
-                    <span data-editor-id="app/contact/page.tsx:102:21">+91 9876543210</span>
+                    <span data-editor-id="app/contact/page.tsx:102:21">+91 90000 19524 , +91 97013 91366</span>
                   </p>
                   <p className="text-sm text-gray-400 mt-1">
                     <span data-editor-id="app/contact/page.tsx:105:21">Mon-Sun: 6AM - 10PM</span>
@@ -123,7 +123,7 @@ export default function ContactPage() {
                     </h3>
                   </div>
                   <p className="text-gray-300">
-                    <span data-editor-id="app/contact/page.tsx:117:21">info@elitefitness.com</span>
+                    <span data-editor-id="app/contact/page.tsx:117:21">elitefitness.miyapur@gmail.com</span>
                   </p>
                   <p className="text-sm text-gray-400 mt-1">
                     <span data-editor-id="app/contact/page.tsx:120:21">We reply within 24 hours</span>
@@ -138,9 +138,9 @@ export default function ContactPage() {
                 </h3>
                 <div className="flex space-x-4">
                   {[
-                    { name: "Instagram", icon: "mdi:instagram", href: "https://instagram.com/elitefitness.parvathapur" },
+                    { name: "Instagram", icon: "mdi:instagram", href: "https://www.instagram.com/elitefitness_miyapur/" },
                     { name: "Facebook", icon: "mdi:facebook", href: "#" },
-                    { name: "WhatsApp", icon: "mdi:whatsapp", href: "#" },
+                    { name: "WhatsApp", icon: "mdi:whatsapp", href: "https://wa.me/919000019524" },
                     { name: "YouTube", icon: "mdi:youtube", href: "#" }
                   ].map((social) => (
                     <motion.a

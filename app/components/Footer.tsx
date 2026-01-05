@@ -27,9 +27,9 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { name: "Instagram", icon: "mdi:instagram", href: "https://instagram.com/elitefitness.parvathapur" },
+  { name: "Instagram", icon: "mdi:instagram", href: "https://www.instagram.com/elitefitness_miyapur/" },
   { name: "Facebook", icon: "mdi:facebook", href: "#" },
-  { name: "WhatsApp", icon: "mdi:whatsapp", href: "#" },
+  { name: "WhatsApp", icon: "mdi:whatsapp", href: "https://wa.me/919000019524" },
   { name: "YouTube", icon: "mdi:youtube", href: "#" },
 ];
 
@@ -71,11 +71,11 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-3 text-gray-300">
                 <Icon icon="solar:phone-bold" className="text-orange-400" />
-                <span data-editor-id="app/components/Footer.tsx:65:17" className="text-sm">+91 9000019524</span>
+                <span data-editor-id="app/components/Footer.tsx:65:17" className="text-sm">+91 9000019524, +91 9701391366</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-300">
                 <Icon icon="solar:letter-bold" className="text-orange-400" />
-                <span data-editor-id="app/components/Footer.tsx:69:17" className="text-sm">info@elitefitness.com</span>
+                <span data-editor-id="app/components/Footer.tsx:69:17" className="text-sm">elitefitness.miyapur@gmail.com</span>
               </div>
             </div>
           </motion.div>

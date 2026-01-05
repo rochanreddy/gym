@@ -300,13 +300,13 @@ export default function MembershipPage() {
                   </div>
 
                   {/* CTA Button */}
-                  <motion.button
+                  <motion.a
+                    href="https://wa.me/919000019524"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    onClick={() => {
-                      console.log('Selected plan:', plan.id);
-                    }}
-                    className={`w-full py-3 rounded-full font-semibold text-base transition-all duration-200 ${plan.popular
+                    className={`w-full py-3 rounded-full font-semibold text-base transition-all duration-200 cursor-pointer inline-block text-center ${plan.popular
                         ? 'bg-orange-400 text-black hover:bg-orange-300'
                         : 'border-2 border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-black'
                       }`}
@@ -314,7 +314,7 @@ export default function MembershipPage() {
                     <span data-editor-id="app/membership/page.tsx:281:21">
                       {plan.popular ? 'Get Started - Special Offer' : 'Choose This Plan'}
                     </span>
-                  </motion.button>
+                  </motion.a>
                 </div>
               </motion.div>
             ))}

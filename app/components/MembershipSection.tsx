@@ -165,10 +165,13 @@ export default function MembershipSection() {
                 </div>
 
                 {/* CTA Button */}
-                <motion.button
+                <motion.a
+                  href="https://wa.me/919000019524"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className={`w-full py-3 rounded-full font-semibold text-base transition-all duration-200 ${
+                  className={`w-full py-3 rounded-full font-semibold text-base transition-all duration-200 cursor-pointer inline-block text-center ${
                     plan.popular
                       ? 'bg-orange-400 text-black hover:bg-orange-300'
                       : 'border-2 border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-black'
@@ -177,7 +180,7 @@ export default function MembershipSection() {
                   <span data-editor-id="app/components/MembershipSection.tsx:149:19">
                     {plan.popular ? 'Start Now - Special Offer' : 'Choose Plan'}
                   </span>
-                </motion.button>
+                </motion.a>
               </div>
             </motion.div>
           ))}

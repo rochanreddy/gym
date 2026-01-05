@@ -56,13 +56,16 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.7 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6"
         >
-          <motion.button
+          <motion.a
+            href="https://wa.me/919000019524"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-orange-400 text-black px-7 py-3 rounded-full font-semibold text-base hover:bg-orange-300 transition-all duration-200 shadow-lg hover:shadow-orange-400/25 w-full sm:w-auto"
+            className="bg-orange-400 text-black px-7 py-3 rounded-full font-semibold text-base hover:bg-orange-300 transition-all duration-200 shadow-lg hover:shadow-orange-400/25 w-full sm:w-auto cursor-pointer inline-block"
           >
             <span data-editor-id="app/components/HeroSection.tsx:59:13">Join Now - ₹899/month</span>
-          </motion.button>
+          </motion.a>
 
           <motion.button
             whileHover={{ scale: 1.05 }}

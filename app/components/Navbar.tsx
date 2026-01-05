@@ -63,13 +63,16 @@ export default function Navbar() {
 
           {/* CTA Button */}
           <div data-editor-id="app/components/Navbar.tsx:59:11" className="hidden md:flex items-center">
-            <motion.button
+            <motion.a
+              href="https://wa.me/919000019524"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-orange-400 text-black px-5 py-2 rounded-full font-medium hover:bg-orange-300 transition-colors duration-200 text-sm"
+              className="bg-orange-400 text-black px-5 py-2 rounded-full font-medium hover:bg-orange-300 transition-colors duration-200 text-sm cursor-pointer inline-block"
             >
               <span data-editor-id="app/components/Navbar.tsx:66:15">Join Now</span>
-            </motion.button>
+            </motion.a>
           </div>
 
           {/* Mobile menu button */}
@@ -104,13 +107,16 @@ export default function Navbar() {
                   <span data-editor-id="app/components/Navbar.tsx:96:19">{item.name}</span>
                 </Link>
               ))}
-              <motion.button
+              <motion.a
+                href="https://wa.me/919000019524"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full bg-orange-400 text-black px-6 py-3 rounded-full font-medium hover:bg-orange-300 transition-colors duration-200 mt-4"
+                className="w-full bg-orange-400 text-black px-6 py-3 rounded-full font-medium hover:bg-orange-300 transition-colors duration-200 mt-4 cursor-pointer inline-block text-center"
               >
                 <span data-editor-id="app/components/Navbar.tsx:105:17">Join Now</span>
-              </motion.button>
+              </motion.a>
             </div>
           </motion.div>
         )}
