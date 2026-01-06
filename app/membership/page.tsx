@@ -45,7 +45,7 @@ const membershipPlans = [
     price: 10500, // 15000 - 30%
     duration: "6 months",
     discount: 30,
-    popular: true,
+    popular: false,
     features: [
       "All Quarterly benefits",
       "Unlimited group classes",
@@ -148,30 +148,21 @@ export default function MembershipPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className={`relative ${plan.popular
-                    ? 'scale-105 lg:scale-110 z-10'
-                    : ''
-                  }`}
+                className="relative"
               >
-                <div className={`h-full bg-gray-900/70 backdrop-blur-sm border rounded-2xl p-8 hover:transform hover:scale-105 transition-all duration-300 ${plan.popular
-                    ? 'border-orange-400 shadow-2xl shadow-orange-400/20'
-                    : 'border-gray-800/50 hover:border-orange-400/30'
-                  }`}>
+                <div className="h-full bg-gray-900/70 backdrop-blur-sm border border-gray-800/50 rounded-2xl p-8 hover:transform hover:scale-105 hover:border-orange-400/50 transition-all duration-300">
                   {/* Badge */}
                   {plan.discount > 0 && (
                     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <span className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wide ${plan.popular
-                          ? 'bg-orange-400 text-black'
-                          : 'bg-gray-800 text-orange-400 border border-orange-400/30'
-                        }`}>
+                      <span className="px-4 py-2 rounded-full text-xs font-semibold tracking-wide bg-gray-800 text-orange-400 border border-orange-400/30">
                         <span data-editor-id="app/membership/page.tsx:200:25">{plan.discount}% OFF</span>
                       </span>
                     </div>
                   )}
 
                   {/* Plan Header */}
-                  <div className="text-center mb-8">
-                    <h3 className="text-2xl font-bold text-white mb-2">
+                  <div className="text-center mb-6">
+                    <h3 className="text-2xl font-bold text-white mb-4">
                       <span data-editor-id="app/membership/page.tsx:209:23">{plan.name}</span>
                     </h3>
 
@@ -190,53 +181,30 @@ export default function MembershipPage() {
                         </span>
                       </span>
                     </div>
-                    <p className="text-gray-400">
+                    <p className="text-gray-400 mb-6">
                       <span data-editor-id="app/membership/page.tsx:226:23">per {plan.duration}</span>
                     </p>
 
                     {plan.discount > 0 && (
-                      <p className="text-green-400 text-sm font-medium mt-2">
+                      <p className="text-green-400 text-sm font-medium mb-6">
                         <span data-editor-id="app/membership/page.tsx:231:25">
                           Save ₹{(plan.originalPrice - plan.price).toLocaleString()} ({plan.discount}%)
                         </span>
                       </p>
                     )}
-                  </div>
 
-                  {/* Features */}
-                  <div className="space-y-2 mb-8">
-                    {plan.features.map((feature: string, featureIndex: number) => (
-                      <div
-                        key={featureIndex}
-                        className="flex items-start space-x-3"
-                      >
-                        <Icon
-                          icon="solar:check-circle-bold"
-                          className="text-orange-400 text-lg flex-shrink-0"
-                        />
-                        <span className="text-gray-300 text-sm leading-relaxed">
-                          {feature}
-                        </span>
-                      </div>
-                    ))}
+                    {/* CTA Button */}
+                    <motion.a
+                      href="https://wa.me/919000019524"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="w-full py-3 rounded-full font-semibold text-base transition-all duration-200 cursor-pointer inline-block text-center border-2 border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-black"
+                    >
+                      <span data-editor-id="app/membership/page.tsx:281:21">Choose Plan</span>
+                    </motion.a>
                   </div>
-
-                  {/* CTA Button */}
-                  <motion.a
-                    href="https://wa.me/919000019524"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className={`w-full py-3 rounded-full font-semibold text-base transition-all duration-200 cursor-pointer inline-block text-center ${plan.popular
-                        ? 'bg-orange-400 text-black hover:bg-orange-300'
-                        : 'border-2 border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-black'
-                      }`}
-                  >
-                    <span data-editor-id="app/membership/page.tsx:281:21">
-                      {plan.popular ? 'Get Started' : 'Choose Plan'}
-                    </span>
-                  </motion.a>
                 </div>
               </motion.div>
             ))}
@@ -259,22 +227,12 @@ export default function MembershipPage() {
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               {
                 icon: "solar:shield-check-bold",
                 title: "No Hidden Fees",
                 description: "Transparent pricing with no surprise charges"
-              },
-              {
-                icon: "solar:calendar-bold",
-                title: "Flexible Cancellation",
-                description: "Cancel anytime with 30 days notice"
-              },
-              {
-                icon: "solar:heart-bold",
-                title: "Health Guarantee",
-                description: "30-day money back guarantee"
               },
               {
                 icon: "solar:star-bold",

@@ -24,7 +24,7 @@ export default function HeroSection() {
         >
           <Icon icon="solar:fire-bold" className="text-orange-400 text-sm" />
           <span data-editor-id="app/components/HeroSection.tsx:25:11" className="text-orange-400 font-medium text-xs">
-            <span data-editor-id="app/components/HeroSection.tsx:26:13">START YOUR FITNESS JOURNEY - ₹2500/MONTH</span>
+            <span data-editor-id="app/components/HeroSection.tsx:26:13">LIMITED TIME OFFER</span>
           </span>
         </motion.div>
 
@@ -64,7 +64,7 @@ export default function HeroSection() {
             whileTap={{ scale: 0.95 }}
             className="bg-orange-400 text-black px-7 py-3 rounded-full font-semibold text-base hover:bg-orange-300 transition-all duration-200 shadow-lg hover:shadow-orange-400/25 w-full sm:w-auto cursor-pointer inline-block"
           >
-            <span data-editor-id="app/components/HeroSection.tsx:59:13">Join Now - ₹2500/month</span>
+            <span data-editor-id="app/components/HeroSection.tsx:59:13">Join Now</span>
           </motion.a>
 
           <motion.button

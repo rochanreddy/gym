@@ -46,35 +46,35 @@ const galleryImages = [
     },
     {
         id: 6,
-        src: "https://images.unsplash.com/photo-1587382667677-aa1304be4776?w=800&q=80",
+        src: "/photos/1.jpeg",
         category: "Classes",
         title: "CrossFit Class",
         description: "High-intensity group training sessions"
     },
     {
         id: 7,
-        src: "https://images.unsplash.com/photo-1591567462086-5563d5e2555c?w=800&q=80",
+        src: "/photos/2.jpeg",
         category: "Classes",
         title: "Zumba Session",
         description: "Fun and energetic dance fitness classes"
     },
     {
         id: 8,
-        src: "https://images.unsplash.com/photo-1564451452859-1257b2503da2?w=800&q=80",
+        src: "/photos/3.jpeg",
         category: "Classes",
         title: "Yoga Studio",
         description: "Peaceful space for yoga and meditation"
     },
     {
         id: 9,
-        src: "https://images.unsplash.com/photo-1585068024075-3b5b33b6543d?w=800&q=80",
+        src: "/photos/4.jpeg",
         category: "Classes",
         title: "Kickboxing",
         description: "Combat fitness training area"
     },
     {
         id: 10,
-        src: "https://images.unsplash.com/photo-1561316504-5133c509d864?w=800&q=80",
+        src: "/photos/5.jpeg",
         category: "Equipment",
         title: "Functional Training",
         description: "Specialized equipment for functional workouts"
