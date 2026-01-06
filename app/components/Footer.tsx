@@ -7,10 +7,12 @@ import Link from "next/link";
 
 const footerLinks = {
   "Quick Links": [
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about" },
     { name: "Classes", href: "/classes" },
-    { name: "Timetable", href: "/timetable" },
-    { name: "Trainers", href: "/trainers" },
     { name: "Membership", href: "/membership" },
+    { name: "Gallery", href: "/gallery" },
+    { name: "Contact", href: "/contact" },
   ],
   "Programs": [
     { name: "CrossFit", href: "/classes#crossfit" },
@@ -117,7 +119,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             {/* Copyright */}
             <p className="text-gray-400 text-sm">
-              <span data-editor-id="app/components/Footer.tsx:110:15">© 2024 Elite Fitness. All rights reserved.</span>
+              <span data-editor-id="app/components/Footer.tsx:110:15">© 2026 Elite Fitness. All rights reserved.</span>
             </p>
 
             {/* Social Links */}

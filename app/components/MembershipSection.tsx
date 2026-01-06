@@ -6,12 +6,12 @@ import { Icon } from "@iconify/react";
 
 const membershipPlans = [
   {
-    name: "Basic",
-    originalPrice: 1200,
-    price: 899,
-    duration: "month",
-    popular: true,
-    badge: "OPENING OFFER",
+    name: "Monthly",
+    originalPrice: 2500,
+    price: 2500,
+    duration: "1 month",
+    discount: 0,
+    popular: false,
     features: [
       "Access to gym equipment",
       "Basic cardio machines",
@@ -21,36 +21,48 @@ const membershipPlans = [
     ]
   },
   {
-    name: "Premium",
-    originalPrice: 2000,
-    price: 1499,
-    duration: "month",
+    name: "Quarterly",
+    originalPrice: 7500,
+    price: 6000, // 7500 - 20%
+    duration: "3 months",
+    discount: 20,
     popular: false,
-    badge: "MOST POPULAR",
     features: [
-      "All Basic features",
-      "Group classes included",
-      "Personal trainer session (2/month)",
-      "Nutrition consultation",
-      "Steam room access",
-      "Priority booking"
+      "All Monthly benefits",
+      "Access to selected group classes",
+      "Extended fitness consultation",
+      "Priority support at front desk"
     ]
   },
   {
-    name: "Elite",
-    originalPrice: 3500,
-    price: 2499,
-    duration: "month",
-    popular: false,
-    badge: "PREMIUM",
+    name: "6 Months",
+    originalPrice: 15000,
+    price: 10500, // 15000 - 30%
+    duration: "6 months",
+    discount: 30,
+    popular: true,
     features: [
-      "All Premium features",
+      "All Quarterly benefits",
+      "Unlimited group classes",
+      "2 personal trainer sessions/month",
+      "Basic nutrition consultation",
+      "Steam room access"
+    ]
+  },
+  {
+    name: "Annual",
+    originalPrice: 30000,
+    price: 15000, // 30000 - 50%
+    duration: "12 months",
+    discount: 50,
+    popular: false,
+    features: [
+      "All 6 Months benefits",
       "Unlimited personal training",
       "Custom diet plans",
-      "Physiotherapy sessions",
-      "VIP locker room",
-      "Supplement guidance",
-      "24/7 gym access"
+      "Weekly body composition analysis",
+      "VIP locker room access",
+      "Supplement guidance"
     ]
   }
 ];
@@ -77,7 +89,7 @@ export default function MembershipSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-            <span data-editor-id="app/components/MembershipSection.tsx:61:13">CHOOSE YOUR</span> <span data-editor-id="app/components/MembershipSection.tsx:61:43" className="text-orange-400">JOURNEY</span>
+            <span data-editor-id="app/components/MembershipSection.tsx:61:13">CHOOSE YOUR</span> <span data-editor-id="app/components/MembershipSection.tsx:61:43" className="text-orange-400">MEMBERSHIP</span>
           </h2>
           <p className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto font-light">
             <span data-editor-id="app/components/MembershipSection.tsx:64:13">Flexible membership options designed to fit your fitness goals and lifestyle</span>
@@ -85,13 +97,13 @@ export default function MembershipSection() {
         </motion.div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {membershipPlans.map((plan, index) => (
             <motion.div
               key={plan.name}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
               className={`relative ${
                 plan.popular
@@ -105,14 +117,14 @@ export default function MembershipSection() {
                   : 'border-gray-800/50 hover:border-orange-400/30'
               }`}>
                 {/* Badge */}
-                {(plan.popular || plan.badge) && (
+                {plan.discount > 0 && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                     <span className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wide ${
                       plan.popular
                         ? 'bg-orange-400 text-black'
                         : 'bg-gray-800 text-orange-400 border border-orange-400/30'
                     }`}>
-                      <span data-editor-id="app/components/MembershipSection.tsx:93:23">{plan.badge}</span>
+                      <span data-editor-id="app/components/MembershipSection.tsx:93:23">{plan.discount}% OFF</span>
                     </span>
                   </div>
                 )}
@@ -124,43 +136,48 @@ export default function MembershipSection() {
                   </h3>
                   
                   {/* Pricing */}
-                  <div className="flex items-center justify-center space-x-2">
-                    {plan.originalPrice > plan.price && (
+                  <div className="flex flex-col items-center justify-center space-y-2 mb-4">
+                    {plan.discount > 0 && (
                       <span className="text-gray-500 line-through text-lg">
-                        <span data-editor-id="app/components/MembershipSection.tsx:107:25">₹{plan.originalPrice}</span>
+                        <span data-editor-id="app/components/MembershipSection.tsx:107:25">
+                          ₹{plan.originalPrice.toLocaleString()}
+                        </span>
                       </span>
                     )}
                     <span className="text-3xl font-bold text-orange-400">
-                      <span data-editor-id="app/components/MembershipSection.tsx:111:23">₹{plan.price}</span>
+                      <span data-editor-id="app/components/MembershipSection.tsx:111:23">
+                        ₹{plan.price.toLocaleString()}
+                      </span>
                     </span>
                   </div>
                   <p className="text-gray-400 mt-1">
                     <span data-editor-id="app/components/MembershipSection.tsx:114:21">per {plan.duration}</span>
                   </p>
                   
-                  {plan.popular && (
+                  {plan.discount > 0 && (
                     <p className="text-green-400 text-sm font-medium mt-2">
-                      <span data-editor-id="app/components/MembershipSection.tsx:118:23">Save ₹{plan.originalPrice - plan.price}/month</span>
+                      <span data-editor-id="app/components/MembershipSection.tsx:118:23">
+                        Save ₹{(plan.originalPrice - plan.price).toLocaleString()} ({plan.discount}%)
+                      </span>
                     </p>
                   )}
                 </div>
 
                 {/* Features */}
-                <div className="space-y-4 mb-8">
-                  {plan.features.map((feature, featureIndex) => (
-                    <motion.div
+                <div className="space-y-2 mb-8">
+                  {plan.features.map((feature: string, featureIndex: number) => (
+                    <div
                       key={featureIndex}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.4, delay: (index * 0.1) + (featureIndex * 0.05) }}
-                      viewport={{ once: true }}
-                      className="flex items-center space-x-3"
+                      className="flex items-start space-x-3"
                     >
-                      <Icon icon="solar:check-circle-bold" className="text-orange-400 text-lg flex-shrink-0" />
+                      <Icon
+                        icon="solar:check-circle-bold"
+                        className="text-orange-400 text-lg flex-shrink-0"
+                      />
                       <span className="text-gray-300 text-sm">
-                        <span data-editor-id="app/components/MembershipSection.tsx:134:25">{feature}</span>
+                        {feature}
                       </span>
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
 
@@ -178,7 +195,7 @@ export default function MembershipSection() {
                   }`}
                 >
                   <span data-editor-id="app/components/MembershipSection.tsx:149:19">
-                    {plan.popular ? 'Start Now - Special Offer' : 'Choose Plan'}
+                    {plan.popular ? 'Get Started' : 'Choose Plan'}
                   </span>
                 </motion.a>
               </div>
@@ -194,10 +211,7 @@ export default function MembershipSection() {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <p className="text-gray-400 text-sm mb-4">
-            <span data-editor-id="app/components/MembershipSection.tsx:165:13">* Opening offer valid for first 100 members only. Terms and conditions apply.</span>
-          </p>
-          <div className="flex items-center justify-center space-x-8 text-gray-400">
+          <div className="flex flex-wrap items-center justify-center gap-6 text-gray-400">
             <div className="flex items-center space-x-2">
               <Icon icon="solar:shield-check-bold" className="text-orange-400" />
               <span data-editor-id="app/components/MembershipSection.tsx:170:15" className="text-sm">No Joining Fee</span>

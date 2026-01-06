@@ -8,86 +8,75 @@ import Footer from "@/app/components/Footer";
 
 const membershipPlans = [
   {
-    id: 'basic',
-    name: "Basic",
-    originalPrice: 1200,
-    price: 899,
-    duration: "month",
-    popular: true,
-    badge: "OPENING OFFER",
-    shortDescription: "Perfect for beginners starting their fitness journey",
+    id: "monthly",
+    name: "Monthly",
+    originalPrice: 2500,
+    price: 2500,
+    duration: "1 month",
+    discount: 0,
+    popular: false,
     features: [
       "Access to gym equipment",
       "Basic cardio machines",
       "Locker facility",
       "Free parking",
-      "Basic fitness consultation",
-      "Access during peak hours",
-      "Mobile app access"
-    ],
-    notIncluded: [
-      "Group classes",
-      "Personal training",
-      "Nutrition consultation",
+      "Basic fitness consultation"
+    ]
+  },
+  {
+    id: "quarterly",
+    name: "Quarterly",
+    originalPrice: 7500,
+    price: 6000, // 7500 - 20%
+    duration: "3 months",
+    discount: 20,
+    popular: false,
+    features: [
+      "All Monthly benefits",
+      "Access to selected group classes",
+      "Extended fitness consultation",
+      "Priority support at front desk"
+    ]
+  },
+  {
+    id: "sixmonths",
+    name: "6 Months",
+    originalPrice: 15000,
+    price: 10500, // 15000 - 30%
+    duration: "6 months",
+    discount: 30,
+    popular: true,
+    features: [
+      "All Quarterly benefits",
+      "Unlimited group classes",
+      "2 personal trainer sessions/month",
+      "Basic nutrition consultation",
       "Steam room access"
     ]
   },
   {
-    id: 'premium',
-    name: "Premium",
-    originalPrice: 2000,
-    price: 1499,
-    duration: "month",
+    id: "annual",
+    name: "Annual",
+    originalPrice: 30000,
+    price: 15000, // 30000 - 50%
+    duration: "12 months",
+    discount: 50,
     popular: false,
-    badge: "MOST POPULAR",
-    shortDescription: "Complete fitness experience with classes and guidance",
     features: [
-      "All Basic features included",
-      "Unlimited group classes",
-      "2 personal trainer sessions/month",
-      "Basic nutrition consultation",
-      "Steam room access",
-      "Priority booking",
-      "Guest passes (2/month)",
-      "Fitness assessment",
-      "Workout plan creation"
-    ],
-    notIncluded: [
-      "Unlimited personal training",
-      "Custom diet plans",
-      "24/7 access"
-    ]
-  },
-  {
-    id: 'elite',
-    name: "Elite",
-    originalPrice: 3500,
-    price: 2499,
-    duration: "month",
-    popular: false,
-    badge: "PREMIUM",
-    shortDescription: "Ultimate fitness experience with unlimited access and premium services",
-    features: [
-      "All Premium features included",
+      "All 6 Months benefits",
       "Unlimited personal training",
       "Custom diet plans",
       "Weekly body composition analysis",
-      "Physiotherapy sessions (2/month)",
       "VIP locker room access",
-      "Supplement guidance",
-      "24/7 gym access",
-      "Priority equipment reservation",
-      "Guest passes (5/month)",
-      "Monthly progress review"
-    ],
-    notIncluded: []
+      "Supplement guidance"
+    ]
   }
 ];
 
 const faqs = [
   {
-    question: "What's included in the opening offer?",
-    answer: "Our opening offer of ₹899/month includes full access to gym equipment, cardio machines, locker facilities, and basic fitness consultation. This special price is valid for the first 100 members only."
+    question: "What's included in the membership?",
+    answer: "All memberships include full access to gym equipment, cardio machines, locker facilities, and basic fitness consultation. Group classes and additional services may vary by plan."
   },
   {
     question: "Can I freeze my membership?",
@@ -95,15 +84,15 @@ const faqs = [
   },
   {
     question: "Is there a joining fee?",
-    answer: "No joining fee during our opening offer period! This saves you an additional ₹2000 that would normally be charged."
+    answer: "No joining fee! All memberships include free registration and setup."
   },
   {
-    question: "Can I upgrade or downgrade my plan?",
-    answer: "Absolutely! You can upgrade your membership at any time. Downgrades are processed at the end of your current billing cycle."
+    question: "Can I upgrade or extend my plan?",
+    answer: "Absolutely! You can upgrade your membership at any time. The remaining balance will be adjusted accordingly."
   },
   {
     question: "What are your operating hours?",
-    answer: "We're open Monday-Sunday from 6:00 AM to 10:00 PM. Elite members get 24/7 access with keycard entry."
+    answer: "We're open Monday-Sunday from 6:00 AM to 10:00 PM."
   },
   {
     question: "Do you offer trial passes?",
@@ -112,30 +101,7 @@ const faqs = [
 ];
 
 export default function MembershipPage() {
-  const [billingCycle, setBillingCycle] = useState<'monthly' | 'quarterly' | 'yearly'>('monthly');
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-
-  const getBillingPrice = (price: number) => {
-    switch (billingCycle) {
-      case 'quarterly':
-        return Math.floor(price * 3 * 0.95); // 5% discount
-      case 'yearly':
-        return Math.floor(price * 12 * 0.85); // 15% discount
-      default:
-        return price;
-    }
-  };
-
-  const getBillingLabel = () => {
-    switch (billingCycle) {
-      case 'quarterly':
-        return '3 months (5% off)';
-      case 'yearly':
-        return '12 months (15% off)';
-      default:
-        return 'monthly';
-    }
-  };
 
   return (
     <div data-editor-id="app/membership/page.tsx:114:5" className="min-h-screen bg-black">
@@ -166,48 +132,21 @@ export default function MembershipPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto"
           >
-            <span data-editor-id="app/membership/page.tsx:140:13">Choose the perfect membership plan that fits your fitness goals and lifestyle</span>
+            <span data-editor-id="app/membership/page.tsx:140:13">Choose the perfect membership duration that fits your fitness goals</span>
           </motion.p>
-        </div>
-      </section>
-
-      {/* Billing Cycle Selector */}
-      <section className="py-8 bg-gray-900/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-center">
-            <div className="bg-gray-800 p-1 rounded-full">
-              {(['monthly', 'quarterly', 'yearly'] as const).map((cycle) => (
-                <button
-                  key={cycle}
-                  onClick={() => setBillingCycle(cycle)}
-                  className={`px-5 py-2 rounded-full font-medium transition-all duration-200 capitalize ${billingCycle === cycle
-                      ? 'bg-orange-400 text-black'
-                      : 'text-gray-300 hover:text-white'
-                    }`}
-                >
-                  <span data-editor-id="app/membership/page.tsx:159:19">
-                    {cycle === 'quarterly' ? '3 Months' : cycle === 'yearly' ? '12 Months' : 'Monthly'}
-                    {cycle !== 'monthly' && <span data-editor-id="app/membership/page.tsx:162:37" className="text-green-400 ml-1 text-xs">
-                      {cycle === 'quarterly' ? '5% OFF' : '15% OFF'}
-                    </span>}
-                  </span>
-                </button>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
       {/* Membership Plans */}
       <section className="py-16 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {membershipPlans.map((plan, index) => (
               <motion.div
                 key={plan.id}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className={`relative ${plan.popular
                     ? 'scale-105 lg:scale-110 z-10'
@@ -219,13 +158,13 @@ export default function MembershipPage() {
                     : 'border-gray-800/50 hover:border-orange-400/30'
                   }`}>
                   {/* Badge */}
-                  {(plan.popular || plan.badge) && (
+                  {plan.discount > 0 && (
                     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                       <span className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wide ${plan.popular
                           ? 'bg-orange-400 text-black'
                           : 'bg-gray-800 text-orange-400 border border-orange-400/30'
                         }`}>
-                        <span data-editor-id="app/membership/page.tsx:200:25">{plan.badge}</span>
+                        <span data-editor-id="app/membership/page.tsx:200:25">{plan.discount}% OFF</span>
                       </span>
                     </div>
                   )}
@@ -235,68 +174,51 @@ export default function MembershipPage() {
                     <h3 className="text-2xl font-bold text-white mb-2">
                       <span data-editor-id="app/membership/page.tsx:209:23">{plan.name}</span>
                     </h3>
-                    <p className="text-gray-400 text-sm mb-4">
-                      <span data-editor-id="app/membership/page.tsx:212:23">{plan.shortDescription}</span>
-                    </p>
 
                     {/* Pricing */}
-                    <div className="flex items-center justify-center space-x-2 mb-2">
-                      {plan.originalPrice > plan.price && billingCycle === 'monthly' && (
+                    <div className="flex flex-col items-center justify-center space-y-2 mb-4">
+                      {plan.discount > 0 && (
                         <span className="text-gray-500 line-through text-lg">
-                          <span data-editor-id="app/membership/page.tsx:219:27">₹{plan.originalPrice}</span>
+                          <span data-editor-id="app/membership/page.tsx:219:27">
+                            ₹{plan.originalPrice.toLocaleString()}
+                          </span>
                         </span>
                       )}
                       <span className="text-3xl font-bold text-orange-400">
-                        <span data-editor-id="app/membership/page.tsx:223:25">₹{getBillingPrice(plan.price).toLocaleString()}</span>
+                        <span data-editor-id="app/membership/page.tsx:223:25">
+                          ₹{plan.price.toLocaleString()}
+                        </span>
                       </span>
                     </div>
                     <p className="text-gray-400">
-                      <span data-editor-id="app/membership/page.tsx:226:23">per {getBillingLabel()}</span>
+                      <span data-editor-id="app/membership/page.tsx:226:23">per {plan.duration}</span>
                     </p>
 
-                    {plan.popular && billingCycle === 'monthly' && (
+                    {plan.discount > 0 && (
                       <p className="text-green-400 text-sm font-medium mt-2">
-                        <span data-editor-id="app/membership/page.tsx:231:25">Save ₹{plan.originalPrice - plan.price}/month</span>
+                        <span data-editor-id="app/membership/page.tsx:231:25">
+                          Save ₹{(plan.originalPrice - plan.price).toLocaleString()} ({plan.discount}%)
+                        </span>
                       </p>
                     )}
                   </div>
 
                   {/* Features */}
-                  <div className="space-y-3 mb-8">
-                    {plan.features.map((feature, featureIndex) => (
-                      <motion.div
+                  <div className="space-y-2 mb-8">
+                    {plan.features.map((feature: string, featureIndex: number) => (
+                      <div
                         key={featureIndex}
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.4, delay: (index * 0.1) + (featureIndex * 0.03) }}
-                        viewport={{ once: true }}
                         className="flex items-start space-x-3"
                       >
-                        <Icon icon="solar:check-circle-bold" className="text-orange-400 text-lg flex-shrink-0 mt-0.5" />
+                        <Icon
+                          icon="solar:check-circle-bold"
+                          className="text-orange-400 text-lg flex-shrink-0"
+                        />
                         <span className="text-gray-300 text-sm leading-relaxed">
-                          <span data-editor-id="app/membership/page.tsx:247:27">{feature}</span>
+                          {feature}
                         </span>
-                      </motion.div>
-                    ))}
-
-                    {plan.notIncluded.length > 0 && (
-                      <div className="pt-4 border-t border-gray-800/50">
-                        <p className="text-gray-500 text-xs mb-3 uppercase tracking-wide">
-                          <span data-editor-id="app/membership/page.tsx:255:27">Not included</span>
-                        </p>
-                        {plan.notIncluded.map((feature, featureIndex) => (
-                          <div
-                            key={featureIndex}
-                            className="flex items-start space-x-3 mb-2"
-                          >
-                            <Icon icon="solar:close-circle-bold" className="text-gray-600 text-lg flex-shrink-0 mt-0.5" />
-                            <span className="text-gray-500 text-sm line-through">
-                              <span data-editor-id="app/membership/page.tsx:264:31">{feature}</span>
-                            </span>
-                          </div>
-                        ))}
                       </div>
-                    )}
+                    ))}
                   </div>
 
                   {/* CTA Button */}
@@ -312,7 +234,7 @@ export default function MembershipPage() {
                       }`}
                   >
                     <span data-editor-id="app/membership/page.tsx:281:21">
-                      {plan.popular ? 'Get Started - Special Offer' : 'Choose This Plan'}
+                      {plan.popular ? 'Get Started' : 'Choose Plan'}
                     </span>
                   </motion.a>
                 </div>

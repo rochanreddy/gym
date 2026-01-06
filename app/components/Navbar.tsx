@@ -4,12 +4,12 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
+import Image from "next/image";
 
 const navItems = [
   { name: "Home", href: "/" },
+  { name: "About Us", href: "/about" },
   { name: "Classes", href: "/classes" },
-  { name: "Timetable", href: "/timetable" },
-  { name: "Trainers", href: "/trainers" },
   { name: "Membership", href: "/membership" },
   { name: "Gallery", href: "/gallery" },
   { name: "Contact", href: "/contact" }
@@ -41,10 +41,15 @@ export default function Navbar() {
       <div data-editor-id="app/components/Navbar.tsx:35:7" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div data-editor-id="app/components/Navbar.tsx:36:9" className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3">
-            <span data-editor-id="app/components/Navbar.tsx:40:13" className="text-white font-semibold text-xl">
-              <span data-editor-id="app/components/Navbar.tsx:41:15">Elite Fitness</span>
-            </span>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/photos/logo.png"
+              alt="Elite Fitness Logo"
+              width={200}
+              height={80}
+              className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}

@@ -9,7 +9,6 @@ import Footer from "@/app/components/Footer";
 const classCategories = [
   "All",
   "Strength",
-  "Cardio", 
   "Flexibility",
   "Dance",
   "HIIT"
@@ -20,100 +19,64 @@ const allClasses = [
     id: 1,
     name: "CrossFit Foundation",
     category: "Strength",
-    instructor: "Rohit Sharma", 
-    duration: "60 min",
-    intensity: "High",
-    participants: "8-12",
     description: "Build strength, power, and conditioning through varied functional movements",
     schedule: [
       { day: "Monday", time: "6:00 AM - 7:00 AM" },
       { day: "Wednesday", time: "6:00 AM - 7:00 AM" },
       { day: "Friday", time: "6:00 AM - 7:00 AM" }
     ],
-    image: "https://images.unsplash.com/photo-1587382667677-aa1304be4776",
+    image: "/photos/crossfit.jpeg",
     benefits: ["Builds functional strength", "Improves cardiovascular health", "Burns calories efficiently"]
   },
   {
     id: 2,
     name: "Zumba Fitness",
     category: "Dance",
-    instructor: "Priya Nair",
-    duration: "45 min", 
-    intensity: "Medium",
-    participants: "15-20",
     description: "High-energy dance workout combining Latin rhythms with easy-to-follow moves",
     schedule: [
       { day: "Tuesday", time: "7:00 PM - 7:45 PM" },
       { day: "Thursday", time: "7:00 PM - 7:45 PM" },
       { day: "Saturday", time: "5:00 PM - 5:45 PM" }
     ],
-    image: "https://images.unsplash.com/photo-1591567462086-5563d5e2555c",
+    image: "/photos/zumba.jpeg",
     benefits: ["Fun cardio workout", "Improves coordination", "Stress relief"]
   },
   {
     id: 3,
     name: "Vinyasa Yoga",
     category: "Flexibility",
-    instructor: "Anjali Gupta",
-    duration: "75 min",
-    intensity: "Low",
-    participants: "10-15",
     description: "Flow-based yoga connecting breath with movement for flexibility and mindfulness",
     schedule: [
       { day: "Monday", time: "8:00 AM - 9:15 AM" },
       { day: "Wednesday", time: "8:00 AM - 9:15 AM" },
       { day: "Sunday", time: "9:00 AM - 10:15 AM" }
     ],
-    image: "https://images.unsplash.com/photo-1564451452859-1257b2503da2",
+    image: "/photos/yoga.jpeg",
     benefits: ["Increases flexibility", "Reduces stress", "Improves balance"]
   },
   {
     id: 4,
     name: "HIIT Circuit",
     category: "HIIT",
-    instructor: "Vikram Singh",
-    duration: "45 min",
-    intensity: "High",
-    participants: "12-16",
     description: "High-intensity interval training for maximum calorie burn and fitness gains",
     schedule: [
       { day: "Tuesday", time: "6:30 AM - 7:15 AM" },
       { day: "Thursday", time: "6:30 AM - 7:15 AM" },
       { day: "Saturday", time: "8:00 AM - 8:45 AM" }
     ],
-    image: "https://images.unsplash.com/photo-1587126160645-8105a66226f6",
+    image: "/photos/hiit.jpeg",
     benefits: ["Burns fat effectively", "Boosts metabolism", "Time-efficient workout"]
   },
   {
     id: 5,
-    name: "Cardio Kickboxing",
-    category: "Cardio",
-    instructor: "Deepak Kumar",
-    duration: "50 min",
-    intensity: "High",
-    participants: "10-14",
-    description: "Combat-inspired cardio workout combining martial arts techniques with fitness",
-    schedule: [
-      { day: "Monday", time: "7:00 PM - 7:50 PM" },
-      { day: "Friday", time: "7:00 PM - 7:50 PM" }
-    ],
-    image: "https://images.unsplash.com/photo-1585068024075-3b5b33b6543d",
-    benefits: ["Excellent cardio workout", "Builds confidence", "Stress relief"]
-  },
-  {
-    id: 6,
     name: "Functional Training",
     category: "Strength",
-    instructor: "Arjun Reddy",
-    duration: "55 min",
-    intensity: "Medium",
-    participants: "8-10",
     description: "Real-world movement patterns to improve daily life functionality",
     schedule: [
       { day: "Wednesday", time: "7:30 PM - 8:25 PM" },
       { day: "Saturday", time: "10:00 AM - 10:55 AM" }
     ],
-    image: "https://images.unsplash.com/photo-1561316504-5133c509d864",
+    image: "/photos/functional.jpeg",
     benefits: ["Improves daily movements", "Prevents injuries", "Builds practical strength"]
   }
 ];
@@ -125,15 +88,6 @@ export default function ClassesPage() {
   const filteredClasses = selectedCategory === "All" 
     ? allClasses 
     : allClasses.filter(cls => cls.category === selectedCategory);
-
-  const getIntensityColor = (intensity: string) => {
-    switch (intensity) {
-      case "Low": return "text-green-400 bg-green-400/10";
-      case "Medium": return "text-orange-400 bg-orange-400/10";  
-      case "High": return "text-red-400 bg-red-400/10";
-      default: return "text-gray-400 bg-gray-400/10";
-    }
-  };
 
   return (
     <div data-editor-id="app/classes/page.tsx:112:5" className="min-h-screen bg-black">
@@ -214,18 +168,13 @@ export default function ClassesPage() {
                   onClick={() => setSelectedClass(classItem)}
                 >
                   {/* Image */}
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative h-56 overflow-hidden">
                     <img
                       src={classItem.image}
                       alt={classItem.name}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
-                    <div className="absolute top-4 right-4">
-                      <span className={`px-3 py-1 rounded-full text-xs font-medium ${getIntensityColor(classItem.intensity)}`}>
-                        <span data-editor-id="app/classes/page.tsx:192:25">{classItem.intensity}</span>
-                      </span>
-                    </div>
                   </div>
 
                   {/* Content */}
@@ -237,16 +186,7 @@ export default function ClassesPage() {
                       <span data-editor-id="app/classes/page.tsx:202:23">{classItem.description}</span>
                     </p>
                     
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="flex items-center space-x-2 text-gray-300">
-                        <Icon icon="solar:user-bold" className="text-orange-400" />
-                        <span data-editor-id="app/classes/page.tsx:208:25" className="text-sm">{classItem.instructor}</span>
-                      </div>
-                      <div className="flex items-center space-x-2 text-gray-300">
-                        <Icon icon="solar:clock-circle-bold" className="text-orange-400" />
-                        <span data-editor-id="app/classes/page.tsx:212:25" className="text-sm">{classItem.duration}</span>
-                      </div>
-                    </div>
+                  <div className="mb-4" />
 
                     <motion.button
                       whileHover={{ scale: 1.05 }}
@@ -308,40 +248,6 @@ export default function ClassesPage() {
                       </h2>
                       <p className="text-gray-400">
                         <span data-editor-id="app/classes/page.tsx:269:25">{selectedClass.description}</span>
-                      </p>
-                    </div>
-                    <span className={`px-4 py-2 rounded-full text-sm font-medium ${getIntensityColor(selectedClass.intensity)}`}>
-                      <span data-editor-id="app/classes/page.tsx:272:23">{selectedClass.intensity} Intensity</span>
-                    </span>
-                  </div>
-
-                  {/* Class Info */}
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                    <div className="bg-gray-800/50 p-4 rounded-xl">
-                      <div className="flex items-center space-x-2 mb-2">
-                        <Icon icon="solar:user-bold" className="text-orange-400" />
-                        <span data-editor-id="app/classes/page.tsx:281:25" className="text-white font-medium">Instructor</span>
-                      </div>
-                      <p className="text-gray-300">
-                        <span data-editor-id="app/classes/page.tsx:284:25">{selectedClass.instructor}</span>
-                      </p>
-                    </div>
-                    <div className="bg-gray-800/50 p-4 rounded-xl">
-                      <div className="flex items-center space-x-2 mb-2">
-                        <Icon icon="solar:clock-circle-bold" className="text-orange-400" />
-                        <span data-editor-id="app/classes/page.tsx:290:25" className="text-white font-medium">Duration</span>
-                      </div>
-                      <p className="text-gray-300">
-                        <span data-editor-id="app/classes/page.tsx:293:25">{selectedClass.duration}</span>
-                      </p>
-                    </div>
-                    <div className="bg-gray-800/50 p-4 rounded-xl">
-                      <div className="flex items-center space-x-2 mb-2">
-                        <Icon icon="solar:users-group-rounded-bold" className="text-orange-400" />
-                        <span data-editor-id="app/classes/page.tsx:299:25" className="text-white font-medium">Class Size</span>
-                      </div>
-                      <p className="text-gray-300">
-                        <span data-editor-id="app/classes/page.tsx:302:25">{selectedClass.participants} people</span>
                       </p>
                     </div>
                   </div>
