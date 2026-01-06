@@ -69,7 +69,7 @@ const allClasses = [
   },
   {
     id: 5,
-    name: "Training",
+    name: "Functional Training",
     category: "Strength",
     description: "Real-world movement patterns to improve daily life functionality",
     schedule: [
