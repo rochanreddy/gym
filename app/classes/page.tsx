@@ -17,7 +17,7 @@ const classCategories = [
 const allClasses = [
   {
     id: 1,
-    name: "CrossFit Foundation",
+    name: "CrossFit",
     category: "Strength",
     description: "Build strength, power, and conditioning through varied functional movements",
     schedule: [
@@ -30,7 +30,7 @@ const allClasses = [
   },
   {
     id: 2,
-    name: "Zumba Fitness",
+    name: "Zumba",
     category: "Dance",
     description: "High-energy dance workout combining Latin rhythms with easy-to-follow moves",
     schedule: [
@@ -43,7 +43,7 @@ const allClasses = [
   },
   {
     id: 3,
-    name: "Vinyasa Yoga",
+    name: "Yoga",
     category: "Flexibility",
     description: "Flow-based yoga connecting breath with movement for flexibility and mindfulness",
     schedule: [
@@ -56,7 +56,7 @@ const allClasses = [
   },
   {
     id: 4,
-    name: "HIIT Circuit",
+    name: "HIIT",
     category: "HIIT",
     description: "High-intensity interval training for maximum calorie burn and fitness gains",
     schedule: [
@@ -69,7 +69,7 @@ const allClasses = [
   },
   {
     id: 5,
-    name: "Functional Training",
+    name: "Training",
     category: "Strength",
     description: "Real-world movement patterns to improve daily life functionality",
     schedule: [
