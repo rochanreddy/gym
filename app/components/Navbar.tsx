@@ -43,11 +43,11 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/photos/logo.png"
+              src="/photos/logo.jpeg"
               alt="Elite Fitness Logo"
-              width={200}
-              height={80}
-              className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto object-contain"
+              width={280}
+              height={112}
+              className="h-16 sm:h-20 md:h-24 lg:h-28 w-auto object-contain"
               priority
             />
           </Link>

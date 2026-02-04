@@ -20,7 +20,11 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html data-editor-id="app/layout.tsx:27:5" lang="en" className={primaryFont.className}>
-      <body data-editor-id="app/layout.tsx:31:7" className="antialiased text-sm">
+      <body
+        data-editor-id="app/layout.tsx:31:7"
+        className="antialiased text-sm"
+        suppressHydrationWarning
+      >
         <PageTransitionLoader />
         <main data-editor-id="app/layout.tsx:32:9" className="h-screen">
           <CosmicAnalyticsProvider>
