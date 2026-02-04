@@ -58,9 +58,9 @@ const membershipPlans = [
     id: "annual",
     name: "Annual",
     originalPrice: 30000,
-    price: 15000, // 30000 - 50%
+    price: 18000, // 30000 - 40%
     duration: "12 months",
-    discount: 50,
+    discount: 40,
     popular: false,
     features: [
       "All 6 Months benefits",
